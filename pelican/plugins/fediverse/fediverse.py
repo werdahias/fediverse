@@ -86,7 +86,7 @@ def post_on_mastodon(settings, new_posts):
 
     # Collect/print information for articles
     for article in new_posts:
-        url = article.get_siteurl() + article.url
+        url = article.get_siteurl() + '/' + article.url
         title = article.title
         htmltext = build_message % (title.replace("&nbsp;", " "), url)
         cleantext = html.fromstring(htmltext)
